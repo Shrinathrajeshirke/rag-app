@@ -63,7 +63,8 @@ def process_chunks() -> None:
     for item in pages_data:
         page_num = item.get("page_number", "unknown")
         raw_text = item.get("text","")
-        vision_desc = item.get("image_descriptiion", "")
+        vision_desc_list = item.get("image_description", [])
+        vision_desc = "\n".join(vision_desc_list) if isinstance(vision_desc_list, list) else str(vision_desc_list)
 
         combined_text = f"{raw_text}\n{vision_desc}".strip()
 

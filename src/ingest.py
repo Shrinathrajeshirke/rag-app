@@ -74,7 +74,7 @@ def extract_images_per_page(pdf_path):
             except Exception as e:
                 print(f" Warning: failed to describe image: {e}")
         if descriptions:
-            images_by_page[page_index] = description
+            images_by_page[page_index] = descriptions
 
     doc.close()
     return images_by_page
@@ -115,4 +115,3 @@ def main():
 
 if __name__=="__main__":
     main()
-    
